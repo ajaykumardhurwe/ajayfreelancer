@@ -88,7 +88,7 @@ const Header = () => {
         </video>
       </div>
       <div className="header-content">
-        <h1>Deshi Khoj</h1>
+        <h1>Ajay Freelancer</h1>
         {/* <p>Empowering freelancers with knowledge and tools</p> */}
       </div>
     </header>
