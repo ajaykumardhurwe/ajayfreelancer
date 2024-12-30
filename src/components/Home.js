@@ -151,7 +151,7 @@ const HomePage = () => {
 
                         <div className="buttons">
                             <button className="button">
-                                <Link to="/payment/" >Pay</Link>
+                                <Link to="/payment" >Pay</Link>
                            </button>
                             <button onClick={() => window.open('tel:+919406362538')} className="button">
                                 Call Now
