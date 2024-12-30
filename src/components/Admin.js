@@ -4,6 +4,8 @@ import CPost from './CPost';
 import CClassScreen from './CClassScreen';
 import CHome from './CHome'
 import CEnglishClass from './CEnglishClass'
+import CDownload from './CDownload'
+
 const Contact = () => {
   return (
     <div className="content">
@@ -19,6 +21,8 @@ const Contact = () => {
 <CClassScreen></CClassScreen>
 <h1>This is EnglishClassScreen</h1>
 <CEnglishClass></CEnglishClass>
+<h1>This is EnglishClassScreen</h1>
+<CDownload></CDownload>
       <p></p>
     </div>
   );

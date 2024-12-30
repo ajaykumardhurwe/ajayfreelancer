@@ -61,16 +61,11 @@ const Download = () => {
 
   return (
     <div className="content">
-      
-      
-      
-      
-      {/* <h1>Download</h1> */}
-      {/* <p>Learn more and download content from this page.</p> */}
+      <h1>Download</h1>
+      <p>Learn more and download content from this page.</p>
 
       {/* Form to input data */}
-     
-      {/* <div className="form-container">
+      <div className="form-container">
         <input
           type="text"
           placeholder="Title"
@@ -90,12 +85,7 @@ const Download = () => {
           onChange={(e) => setLink(e.target.value)}
         />
         <button onClick={addData}>Save Data</button>
-      </div> */}
-
-
-
-
-
+      </div>
 
       {/* Display saved links */}
       <h2>Saved Links</h2>
