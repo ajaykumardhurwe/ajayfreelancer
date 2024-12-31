@@ -49,6 +49,10 @@ import MCQTestScreen from './components/MCQTestScreen';
 import EnglishClass from './components/EnglishClass';
 import CgpscMcq from './components/CgpscMcq';
 import Admin from './components/Admin'
+import IndianConstitutionMcq from './components/IindianConstitutionMcq';
+import SquareBox from './components/SquareBox'
+import DetailsPage from './components/DetailsPage';
+
 
 const App = () => {
   return (
@@ -81,7 +85,8 @@ const App = () => {
             {/* <Route path='/backup' element={<Backup></Backup>}/> */}
             <Route path='/payment' element={<Payment></Payment>}/>
             <Route path='/englishclass' element={<EnglishClass></EnglishClass>}/>
-         
+            <Route path="/details/:id" element={<DetailsPage />} />
+
             <Route path='/socialmedia' element={<SocialMedia></SocialMedia>}/>
           </Routes>
         </main>

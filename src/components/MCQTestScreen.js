@@ -135,9 +135,10 @@ const MCQTestScreen = () => {
               <p className="description">{mcq.description}</p>
              
              <button className="button">
-             <Link to="/test" >
+             <Link to="/test" target="_blank" >
                 Start Test
               </Link>
+
              </button>
              
 
