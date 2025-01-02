@@ -31,7 +31,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser, FaUserEdit, FaHome, FaInfoCircle, FaServicestack, FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaYoutube, FaTwitter, FaLinkedin, FaSign, FaSignInAlt } from 'react-icons/fa';
+import { FaUser, FaCopyright, FaUserEdit, FaHome, FaInfoCircle, FaServicestack, FaRuler, FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaYoutube, FaTwitter, FaLinkedin, FaSign, FaSignInAlt } from 'react-icons/fa';
 import '../styles/Drawer.css';
 
 const Drawer = () => {
@@ -64,6 +64,10 @@ const Drawer = () => {
 
           <Link to="/admin" onClick={toggleDrawer}>
             <FaUserEdit /> Admin
+          </Link>
+
+          <Link to="/privacypolicy" onClick={toggleDrawer}>
+            <FaCopyright /> Privacy Policy
           </Link>
 
           <Link to="/socialmedia" onClick={toggleDrawer}>

@@ -222,6 +222,10 @@ import {
 } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import '../styles/MCQTest.css';
+import { useNavigate } from "react-router-dom";
+
+
+
 
 const MCQTest = () => {
   const [mcqs, setMcqs] = useState([]);
@@ -235,6 +239,9 @@ const MCQTest = () => {
 
   const mcqCollectionRef = collection(db, 'mcqs');
   const scoreCollectionRef = collection(db, 'scores');
+  
+  
+ 
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -332,7 +339,20 @@ const MCQTest = () => {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  if (!user) return <div>Please sign in to take the test.</div>;
+
+  const navigate = useNavigate();
+const handleRedirect = () => {
+  navigate("/signin"); // Replace '/signin' with the correct route to your sign-in page
+};
+
+  if (!user) return <div>
+
+<button className="sign-in-btn" onClick={handleRedirect}>
+  Please sign in to take the test.(click here)
+</button>
+
+ 
+</div>;
 
   if (testCompleted) {
     return (

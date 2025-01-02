@@ -1,21 +1,13 @@
-// import React from 'react';
-
-// const Download = () => {
-//   return (
-//     <div className="content">
-//       <h1>Download</h1>
-//       <p>Learn more Download us on this page.</p>
-//     </div>
-//   );
-// };
-
-// export default Download;
-
-
-
-
 import React, { useState, useEffect } from 'react';
-import { db, collection, addDoc, getDocs } from '../services/firebaseConfig'; // Import Firebase functions
+import { db } from '../services/firebaseConfig';
+import {
+  collection,
+  addDoc,
+  getDocs,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from 'firebase/firestore';
 import '../styles/Download.css';
 
 const Download = () => {
@@ -23,22 +15,29 @@ const Download = () => {
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
   const [data, setData] = useState([]);
+  const [editingId, setEditingId] = useState(null); // ID of the item being edited
+
+  const downloadsCollection = collection(db, "downloads");
 
   // Function to add data to Firebase Firestore
   const addData = async () => {
     if (title && description && link) {
       try {
-        await addDoc(collection(db, "downloads"), {
-          title,
-          description,
-          link,
-        });
+        if (editingId) {
+          // Update existing item
+          const docRef = doc(db, "downloads", editingId);
+          await updateDoc(docRef, { title, description, link });
+          setEditingId(null);
+        } else {
+          // Add new item
+          await addDoc(downloadsCollection, { title, description, link });
+        }
         setTitle('');
         setDescription('');
         setLink('');
-        fetchData(); // Refresh data after adding
+        fetchData(); // Refresh data after operation
       } catch (e) {
-        console.error("Error adding document: ", e);
+        console.error("Error saving document: ", e);
       }
     } else {
       alert("Please fill all fields");
@@ -47,12 +46,31 @@ const Download = () => {
 
   // Fetch data from Firestore
   const fetchData = async () => {
-    const querySnapshot = await getDocs(collection(db, "downloads"));
+    const querySnapshot = await getDocs(downloadsCollection);
     const fetchedData = querySnapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data(),
     }));
     setData(fetchedData);
+  };
+
+  // Handle delete operation
+  const handleDelete = async (id) => {
+    try {
+      const docRef = doc(db, "downloads", id);
+      await deleteDoc(docRef);
+      fetchData(); // Refresh data after deletion
+    } catch (e) {
+      console.error("Error deleting document: ", e);
+    }
+  };
+
+  // Handle edit operation
+  const handleEdit = (item) => {
+    setEditingId(item.id); // Set the editing ID
+    setTitle(item.title);
+    setDescription(item.description);
+    setLink(item.link);
   };
 
   useEffect(() => {
@@ -84,7 +102,9 @@ const Download = () => {
           value={link}
           onChange={(e) => setLink(e.target.value)}
         />
-        <button onClick={addData}>Save Data</button>
+        <button onClick={addData}>
+          {editingId ? "Update Data" : "Save Data"}
+        </button>
       </div>
 
       {/* Display saved links */}
@@ -94,10 +114,14 @@ const Download = () => {
           <div key={item.id} className="link-item">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-            <button
-              onClick={() => window.open(item.link, '_blank')}
-            >
+            <button onClick={() => window.open(item.link, '_blank')}>
               Open Link
+            </button>
+            <button onClick={() => handleEdit(item)}>
+              Edit
+            </button>
+            <button onClick={() => handleDelete(item.id)}>
+              Delete
             </button>
           </div>
         ))}
@@ -107,3 +131,8 @@ const Download = () => {
 };
 
 export default Download;
+
+
+
+
+

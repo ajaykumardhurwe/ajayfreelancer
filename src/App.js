@@ -36,7 +36,6 @@ import SignInPage from './components/SignInPage';
 import GoogleSignInPage from './components/GoogleSignInPage';
 import Login from './components/Login';
 import MCQTest from './components/MCQTest';
-import AdminPanel from './components/AdminPanel';
 import Result from './components/Result';
 import Auth from './components/Auth';
 import Backup from './components/Backup';
@@ -52,7 +51,9 @@ import Admin from './components/Admin'
 import IndianConstitutionMcq from './components/IindianConstitutionMcq';
 import SquareBox from './components/SquareBox'
 import DetailsPage from './components/DetailsPage';
-
+import UploadMcq from './components/UploadMcq'
+import CodePlayground from './components/CodePlayground';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 const App = () => {
   return (
@@ -67,7 +68,7 @@ const App = () => {
             {/* <Route path="/" element={<CrudOperations />} /> */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About></About>}></Route>
-            <Route path="/services" element={<AdminPanel></AdminPanel>}/>
+            <Route path="/srccode" element={<CodePlayground></CodePlayground>}/>
             <Route path='/contact' element={<Contact></Contact>}/>
             <Route path='/test' element={<MCQTest></MCQTest>}/>
             <Route path='/post' element={<Post></Post>}/>
@@ -86,8 +87,10 @@ const App = () => {
             <Route path='/payment' element={<Payment></Payment>}/>
             <Route path='/englishclass' element={<EnglishClass></EnglishClass>}/>
             <Route path="/details/:id" element={<DetailsPage />} />
-
+<Route path="/project" element={<SquareBox></SquareBox>} />
             <Route path='/socialmedia' element={<SocialMedia></SocialMedia>}/>
+            <Route path='/privacypolicy' element={<PrivacyPolicy></PrivacyPolicy>}/>
+
           </Routes>
         </main>
 

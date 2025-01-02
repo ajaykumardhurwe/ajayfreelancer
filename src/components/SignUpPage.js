@@ -38,6 +38,13 @@ const SignUpPage = () => {
       <p>
         Already have an account? <Link to="/signin">Sign In</Link>
       </p>
+
+  Or sign in with
+        <Link to="/signin-google" className="google-link">
+          <span className="material-icons">google</span>
+          Google
+        </Link>
+
     </div>
   );
 };

@@ -78,8 +78,11 @@ const HomePage = () => {
         <div className="home-page">
 
 
+<h5>
+My name is Ajay Dhurwe, and I specialize in providing tailored website development services that meet your business needs. I offer three distinct packages - Basic, Intermediate, and Advanced designed to suit various requirements and budgets. Let’s explore how I can help you create an impactful online presence.
 
 
+</h5>
 
 {/* 
             <div className="add-container">
@@ -177,4 +180,14 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+
+
+
+
+
+
+
+
 

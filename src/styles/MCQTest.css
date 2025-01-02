@@ -76,6 +76,47 @@ input[type="checkbox"]:checked + label {
 
 
 
+/* Base Styles */
+.sign-in-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 150px;
+ 
+}
+
+.sign-in-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.sign-in-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.8);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sign-in-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-in-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
 
 
 
