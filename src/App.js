@@ -54,7 +54,8 @@ import DetailsPage from './components/DetailsPage';
 import UploadMcq from './components/UploadMcq'
 import CodePlayground from './components/CodePlayground';
 import PrivacyPolicy from './components/PrivacyPolicy';
-
+// import UploadMcq from './components/UploadMcq'
+import CMCQTestScreen from './components/CMCQTestScreen'
 const App = () => {
   return (
     <Router>
@@ -68,7 +69,9 @@ const App = () => {
             {/* <Route path="/" element={<CrudOperations />} /> */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About></About>}></Route>
-            <Route path="/srccode" element={<CodePlayground></CodePlayground>}/>
+            {/* <Route path="/srccode" element={<CodePlayground></CodePlayground>}/> */}
+            <Route path="/srccode" element={<UploadMcq></UploadMcq>}/>
+
             <Route path='/contact' element={<Contact></Contact>}/>
             <Route path='/test' element={<MCQTest></MCQTest>}/>
             <Route path='/post' element={<Post></Post>}/>
@@ -87,7 +90,12 @@ const App = () => {
             <Route path='/payment' element={<Payment></Payment>}/>
             <Route path='/englishclass' element={<EnglishClass></EnglishClass>}/>
             <Route path="/details/:id" element={<DetailsPage />} />
-<Route path="/project" element={<SquareBox></SquareBox>} />
+            <Route path='/privacypolicy' element={<PrivacyPolicy></PrivacyPolicy>}/>
+            <Route path='details/n1syfofbUvP6D7GqIFHQ' element={<MCQTest></MCQTest>}/>
+            <Route path='testing/' element={<CMCQTestScreen></CMCQTestScreen>}/>
+            
+            
+            <Route path="/project" element={<SquareBox></SquareBox>} />
             <Route path='/socialmedia' element={<SocialMedia></SocialMedia>}/>
             <Route path='/privacypolicy' element={<PrivacyPolicy></PrivacyPolicy>}/>
 

@@ -238,15 +238,16 @@ const EnglishClass = () => {
 
 
 
-      {/* <h3>Import & Export</h3>
+       <h3>Import & Export</h3>
       <input type="file" accept=".csv" onChange={handleCSVUpload} />
       <button onClick={() => importFromCSV(tab)}>Import from CSV</button>
       <button onClick={() => exportToCSV(tab)}>Export to CSV</button>
 
       <h3>{tab === 'content' ? 'Content' : 'Videos'}</h3>
-    
-    
-     */}
+     
+
+
+
     
       <div className="items-list">
         {(tab === 'content' ? contentItems : videoItems).map(item => (

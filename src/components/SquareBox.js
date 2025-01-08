@@ -212,6 +212,8 @@ const Home = () => {
            
            
             {/* <button onClick={() => handleDelete(item.id)}>Delete</button> */}
+           <br></br>
+            <button></button>
           </div>
         ))}
       </div>

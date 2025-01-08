@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><Link to="/download">Download</Link></li>
         <li><Link to="/project">Project</Link></li>
         <li><Link to="/srccode">Code</Link></li>
-        {/* <li><Link to="/backup">Backup</Link></li> */}
+        <li><Link to="/testing">Testing</Link></li>
 
       </ul>
     </nav>
